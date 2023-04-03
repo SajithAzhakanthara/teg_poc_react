@@ -1,0 +1,64 @@
+.listing .company-detail-box h3 {
+    text-align: left;
+}
+
+.listing .company-detail-box {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    background: #eae8e8;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+.listing .company-detail-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.listing .company-detail-box ul li {
+    padding: 5px;
+    border-bottom: 1px solid #bfbcbc;
+}
+
+.listing .company-detail-box ul li:last-child {
+    border-bottom: none;
+}
+
+.listing .company-detail-box ul.company-detail-list li span:first-child {
+    display: inline-block;
+    width:50%;
+}
+
+.listing .company-detail-box ul.director-list li span:nth-child(1) {
+    flex-basis: 50px;
+}
+
+.listing .company-detail-box ul.director-list li span:nth-child(2) {
+    flex-basis: calc(100% - 160px);
+    padding: 0 15px;
+    text-align: left;
+}
+
+.listing .company-detail-box ul.director-list li span:nth-child(3) {
+    flex-basis: 110px;
+}
+
+.listing .company-detail-box button {
+    border: 0;
+    background: #ddd;
+    border: 1px solid #c0bcbc;
+    font-size: 14px;
+    text-transform: capitalize;
+    border-radius: 5px;
+}
+
+.listing h5 {
+    margin-bottom: 20px;
+}
+
+.listing .director-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

@@ -1,0 +1,226 @@
+.listingTwo {
+    padding-top: 40px;
+}
+
+.listingTwo ul {
+    list-style: none;
+    padding: 0;
+}
+
+.listingTwo .company-detail-outer {
+    border-bottom: 1px solid #ddd;
+}
+
+.listingTwo ul li span {
+    display:inline-block;
+}
+
+.listingTwo ul li {
+    padding: 8px 0;
+}
+
+.listingTwo .company-detail-outer ul li span:nth-child(1) {
+    flex-basis:200px;
+}
+
+.listingTwo .company-detail-outer ul li span:nth-child(2) {
+    font-weight: 500;
+}
+
+.listingTwo h3 {
+    margin-bottom: 25px;
+}
+
+.listingTwo .director-list-outer ul li {
+    text-transform: capitalize;
+    font-size: 15px;
+}
+
+.listingTwo .director-list-outer ul li span:nth-child(1) {
+    max-width: 50%;
+    width:100%;
+}
+
+.listingTwo .director-list-outer {
+    padding-top: 30px;
+}
+
+.listingTwo .director-list-outer button {
+    background: #003c79;
+    border: none;
+    color: #fff;
+    padding: 0 15px;
+    height: 34px;
+    border-radius: 10px;
+    transition:all ease 0.5s;
+}
+
+.listingTwo .director-list-outer button:hover {
+    background: #1d62a9; 
+    transition:all ease 0.5s;
+}
+
+.listingTwo .dir-detail-popup {
+    position: fixed;
+    width:100%;
+    min-height: 100vh;
+    background: rgba(0,0,0,0.5);
+    top:0;
+    left:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.listingTwo .dir-detail-popup-dialog {
+    max-width:700px;
+    width:100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    height: 70vh;
+}
+
+.listingTwo button.close {
+    background: transparent;
+    border: navajowhite;
+    font-weight: 500;
+    font-size: 27px;
+    position: absolute;
+    right: 3px;
+    top: -6px;
+    cursor: pointer;
+    z-index: 9;
+}
+
+.listingTwo img.modal-loader-img {
+    width: 50px;
+}
+
+.listingTwo .modal-loader {
+    position: absolute;
+    width: 100%;
+    height:100%;
+    background-color: #fff;
+    top: 0;
+    left:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.listingTwo .dir-detail-popup-dialog li {
+    display: flex;
+}
+
+.listingTwo .dir-detail-popup-dialog li div:nth-child(1) {
+    flex-basis: 148px;
+}
+
+.listingTwo .modal-error {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#f00;
+    font-weight: 500;
+}
+
+.listingTwo .modal-scroller {
+    height:auto;
+}
+
+.listingTwo .director-list-outer ul li span:nth-child(1) span {
+    position: absolute;
+    width: 50px;
+    display: inline-block;
+    padding-left: 0;
+    text-align: left;
+    left: 0;
+}
+
+.listingTwo .director-list-outer ul li span:nth-child(1) {
+    max-width: 50%;
+    width: 100%;
+    position: relative;
+    display: inline-flex;
+    padding-left: 27px;
+}
+
+.listingTwo .company-detail-outer ul li {
+    display: flex;
+}
+
+.listingTwo .company-detail-outer ul li span:nth-child(2) span {
+    padding-left: 0px;
+    position: absolute;
+    display: inline-block;
+    width:50px;
+    left: 0;
+}
+
+.listingTwo .company-detail-outer ul li span:nth-child(2) {
+    position: relative;
+    padding-left: 20px;
+}
+
+.listingTwo .dir-detail-popup-dialog li div:nth-child(2) {
+    position: relative;
+    padding-left: 25px;
+}
+
+.listingTwo .dir-detail-popup-dialog li div:nth-child(2) span {
+    position: absolute;
+    left: 0;
+}
+
+@media(max-width:991px) {
+    .listingTwo .dir-detail-popup-dialog {
+        overflow-y:scroll;
+    }
+}
+
+@media(max-width:767px) {
+    .listingTwo .director-list-outer ul li {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+    }
+    .listingTwo .company-detail-outer ul li span:nth-child(1) {
+        flex-basis:50%;
+        padding-left: 10px;
+        box-sizing: border-box;
+    }
+
+    .listingTwo .company-detail-outer ul li span:nth-child(2) {
+        flex-basis:50%;
+    }
+    .company-detail-outer span {
+        font-size: 14px;
+    }
+    .listingTwo .director-list-outer button {
+        height: 28px;
+        font-size: 12px;
+    }
+    .listingTwo .dir-detail-popup-dialog li {
+        font-size: 14px;
+    }
+}
+
+@media(max-width:575px) {
+
+    .listingTwo .dir-detail-popup-dialog li {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .listingTwo .dir-detail-popup-dialog li div {
+        flex-basis: 50%;
+    }
+}
