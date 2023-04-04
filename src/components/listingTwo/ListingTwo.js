@@ -113,7 +113,7 @@ const onClickHandler = (e) => {
                             <li><span>Company status</span><span><span>:</span>{companydata.report.companySummary.companyStatus.status}</span></li>
                             <li><span>Country</span><span><span>:</span>{companydata.report.companySummary.country}</span></li>
                             {majorityShareHolder &&
-                                <li><span>Majority share holder</span><span><span>:</span>{majorityShareHolder?.name}</span></li>
+                                <li><span>Majority share holder (PSC)</span><span><span>:</span>{majorityShareHolder?.name}</span></li>
                             }
                         </ul>
                     </div>

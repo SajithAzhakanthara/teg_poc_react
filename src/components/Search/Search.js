@@ -130,8 +130,6 @@ const navigate = useNavigate();
                         <div className="input-wrap">
                             <select onChange={selectChangeHanler}>
                                 <option value = "">Select Country</option>
-                                <option value = "US">United States</option>
-                                <option value = "CA">Canada</option>
                                 <option value = "GB">United Kingdom</option>
                             </select>
                         </div>
