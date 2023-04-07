@@ -219,3 +219,4 @@ const onClickHandler = (e) => {
 }
 
 export default ListingTwo;
+

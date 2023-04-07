@@ -38,7 +38,7 @@ const Search = () => {
         inputRef.current.focus();
     }
 
-
+    
 
 // function for fetching company details using company id
 
@@ -84,6 +84,7 @@ function fetchCompanies(country, company) {
       return response.json();
     })
     .then(data => {
+      console.log(data);
       const companyData = data.companies;
       setHind(companyData);
     })

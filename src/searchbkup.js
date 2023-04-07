@@ -38,7 +38,7 @@ const Search = () => {
         inputRef.current.focus();
     }
 
-
+    
 
 // function for fetching company details using company id
 
@@ -55,9 +55,10 @@ function fetchCompanyDetails(companyId) {
       return response.json();
     })
     .then(data => {
-      sessionStorage.setItem('country',country);
-      sessionStorage.setItem('cdata', JSON.stringify(data));
-      data?.report?.shareCapitalStructure && sessionStorage.setItem('shareholders', JSON.stringify(data.report.shareCapitalStructure));
+      console.log(data);
+      localStorage.setItem('country',country);
+      localStorage.setItem('cdata', JSON.stringify(data));
+      data?.report?.shareCapitalStructure && localStorage.setItem('shareholders', JSON.stringify(data.report.shareCapitalStructure));
       !data.report && setError(true);
       data.report && navigate('/listing2');
     })
@@ -83,6 +84,7 @@ function fetchCompanies(country, company) {
       return response.json();
     })
     .then(data => {
+      console.log(data);
       const companyData = data.companies;
       setHind(companyData);
     })
@@ -129,8 +131,6 @@ const navigate = useNavigate();
                         <div className="input-wrap">
                             <select onChange={selectChangeHanler}>
                                 <option value = "">Select Country</option>
-                                <option value = "US">United States</option>
-                                <option value = "CA">Canada</option>
                                 <option value = "GB">United Kingdom</option>
                             </select>
                         </div>
@@ -161,4 +161,4 @@ const navigate = useNavigate();
     );
 }
 
-// export default Search;
+export default Search;
