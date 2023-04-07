@@ -38,43 +38,59 @@ const Search = () => {
         inputRef.current.focus();
     }
 
-    
+//function for fetching psc
 
-// function for fetching company details using company id
+function getPSC(companyId){
+
+   const url = `http://ec2-35-153-33-250.compute-1.amazonaws.com:8080/TegPoc/companydetails?company_id=${companyId}`;
+
+   fetch(url)
+   .then(response => {
+    if(!response.ok){
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+   })
+   .then(data=>{
+ 
+    //guid one
+    console.log(data[0].Audits);
+    const dataOne = data[0].Audits;
+    const dataTwo = data[1].Audits;
+    const dataThree= data[2].Audits;
+
+    console.log(dataOne);
+    console.log(dataOne);
+    console.log(dataOne);
+    // data.map(data=>{
+    //   localStorage.setItem('dataOne',JSON.stringify(dataOne));
+    // })
+    localStorage.setItem('dataOne',JSON.stringify(dataOne));
+    localStorage.setItem('dataTwo',JSON.stringify(dataTwo));
+    localStorage.setItem('dataThree',JSON.stringify(dataThree));
+    data && navigate('/listing2');
+
+   })
+   .catch(error => {
+    console.log(error);
+   })
+   .finally(function(){
+    setIsLoading(false);
+   })
 
 
-function fetchCompanyDetails(companyId) {
-
-  const url = `http://ec2-35-153-33-250.compute-1.amazonaws.com:8080/TegPoc/companies1?company_id=${companyId}`;
-
-  return fetch(url)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      console.log(data);
-      localStorage.setItem('country',country);
-      localStorage.setItem('cdata', JSON.stringify(data));
-      data?.report?.shareCapitalStructure && localStorage.setItem('shareholders', JSON.stringify(data.report.shareCapitalStructure));
-      !data.report && setError(true);
-      data.report && navigate('/listing2');
-    })
-    .catch(error => {
-      console.error('Error fetching data:', error);
-    })
-    .finally(function() {
-      setIsLoading(false);
-    });
 }
+
+
+
+
+
 
 // function for fetching company name hind while typing company name
 
 function fetchCompanies(country, company) {
   const trimmedCompany = company.split(" ").join("");
-  const url = `http://ec2-35-153-33-250.compute-1.amazonaws.com:8080/TegPoc/search1?countries=${country}&name=${trimmedCompany}`;
+  const url = `http://ec2-35-153-33-250.compute-1.amazonaws.com:8080/TegPoc/findpsc?countries=${country}&name=${trimmedCompany}`;
 
   return fetch(url)
     .then(response => {
@@ -110,11 +126,11 @@ const navigate = useNavigate();
 // form submit function
 
     const onSubmitHandler = (e) => {
-      localStorage.removeItem('cdata');
-      localStorage.removeItem('shareholders');
       e.preventDefault();
-      setIsLoading(true);
-      fetchCompanyDetails(companyId);
+      localStorage.clear();
+      !companyId && setError(true);
+      companyId && setIsLoading(true);
+      companyId && getPSC(companyId);
 
     };
     
